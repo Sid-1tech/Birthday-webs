@@ -36,7 +36,7 @@ const cardsData = [
     {
         id: 5,
         image: img5,
-        title: "Random Thought 🎈",
+        title: "Random Thoughts 🎈",
         note: "Looking back at old photos of us, IDK, I'm just surprised I have one friend who I can be so close to even now. It is true, because I always cut people off somewhere because I never want to lose my peace of mind—but I never cut you off. I make you cry and I hurt you a lot, but I'm sorry. I can't say it won't happen again, but I'll make sure that I'll try my best to not let it happen again. Even if it happens, I'll be there and see you cry, and I'll compromise and not run away like before. Maybe if you're in person, I'll even kiss you or hug you to make you feel cherished. I will do anything—not like to the extreme, but more than what I normally do for anyone—just to see you happy with me. 🥹🫂"
     }
 ];
@@ -679,15 +679,14 @@ const App = () => {
                         {/* Decorative hidden moon trigger */}
                         <div
                             className="absolute top-10 left-10 md:top-20 md:left-20 z-[40] cursor-pointer transition-all duration-300 hover:scale-110"
-                            style={{ 
+                            style={{
                                 opacity: 0.7 + (moonClicks * 0.05),
-                                filter: `drop-shadow(0 0 ${15 + (moonClicks * 10)}px ${
-                                    moonClicks === 0 ? 'rgba(255,255,255,0.4)' : 
-                                    moonClicks === 1 ? 'rgba(254, 240, 138, 0.5)' :
-                                    moonClicks === 2 ? 'rgba(253, 224, 71, 0.6)' :
-                                    moonClicks === 3 ? 'rgba(250, 204, 21, 0.8)' :
-                                    'rgba(234, 179, 8, 1)'
-                                })`
+                                filter: `drop-shadow(0 0 ${15 + (moonClicks * 10)}px ${moonClicks === 0 ? 'rgba(255,255,255,0.4)' :
+                                        moonClicks === 1 ? 'rgba(254, 240, 138, 0.5)' :
+                                            moonClicks === 2 ? 'rgba(253, 224, 71, 0.6)' :
+                                                moonClicks === 3 ? 'rgba(250, 204, 21, 0.8)' :
+                                                    'rgba(234, 179, 8, 1)'
+                                    })`
                             }}
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -700,23 +699,23 @@ const App = () => {
                             }}
                             title="A lonely moon..."
                         >
-                            <Moon 
+                            <Moon
                                 fill={
-                                    moonClicks === 0 ? '#e2e8f0' : 
-                                    moonClicks === 1 ? '#fef08a' :
-                                    moonClicks === 2 ? '#fde047' :
-                                    moonClicks === 3 ? '#facc15' :
-                                    '#eab308'
-                                } 
+                                    moonClicks === 0 ? '#e2e8f0' :
+                                        moonClicks === 1 ? '#fef08a' :
+                                            moonClicks === 2 ? '#fde047' :
+                                                moonClicks === 3 ? '#facc15' :
+                                                    '#eab308'
+                                }
                                 color={
-                                    moonClicks === 0 ? '#e2e8f0' : 
-                                    moonClicks === 1 ? '#fef08a' :
-                                    moonClicks === 2 ? '#fde047' :
-                                    moonClicks === 3 ? '#facc15' :
-                                    '#eab308'
-                                } 
-                                size={70} 
-                                className="animate-pulse transition-colors duration-500" 
+                                    moonClicks === 0 ? '#e2e8f0' :
+                                        moonClicks === 1 ? '#fef08a' :
+                                            moonClicks === 2 ? '#fde047' :
+                                                moonClicks === 3 ? '#facc15' :
+                                                    '#eab308'
+                                }
+                                size={70}
+                                className="animate-pulse transition-colors duration-500"
                             />
                         </div>
                     </>
