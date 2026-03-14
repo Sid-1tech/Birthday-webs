@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vintage-bg: #f4f1ea;
+  --color-vintage-paper: #f0eee8;
+  --color-vintage-text: #3d3b38;
+  --color-vintage-brown: #a27a5d;
+  --color-vintage-light-brown: #cbbba9;
+  --color-vintage-white: #ffffff;
+  --color-vintage-border: #dfd7cf;
+  
+  --font-serif: "Cormorant Garamond", serif;
+  --font-script: "Caveat", cursive;
+}
+
+body {
+    font-family: var(--font-serif);
+    background-color: var(--color-vintage-paper);
+    color: var(--color-vintage-text);
+    background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
+    /* A subtler noise to mimic paper */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f0eee8; 
+}
+::-webkit-scrollbar-thumb {
+    background: #cbbba9; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a27a5d; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px) rotate(-5deg); }
+    50% { transform: translateX(5px) rotate(5deg); }
+    75% { transform: translateX(-5px) rotate(-5deg); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-shake {
+    animation: shake 0.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat-fast {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    50% { transform: scale(0.95); }
+    75% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.animate-heartbeat-fast {
+    animation: heartbeat-fast 0.5s ease-in-out 3;
+}
+
+.tape {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    z-index: 10;
+}
+
+/* 3D Flipping Cards */
+.card-wrapper {
+    perspective: 1500px;
+}
+.card-inner {
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+.card-face {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Dreamy Stargazing Night Theme */
+:root.theme-midnight {
+    --color-vintage-bg: #0f152e; /* Deep navy blue */
+    --color-vintage-paper: #182242; /* Slightly lighter navy for cards */
+    --color-vintage-text: #e2e8f0; /* Soft moonlight white */
+    --color-vintage-brown: #93c5fd; /* Soft star blue */
+    --color-vintage-light-brown: #4f6492; /* Faded blue */
+    --color-vintage-white: #1e293b; /* Slate navy */
+    --color-vintage-border: #334155; /* Muted border */
+}
+
+:root.theme-midnight body {
+    background-image: none; /* remove paper texture */
+    background-color: var(--color-vintage-bg);
+}
+
+:root.theme-midnight ::-webkit-scrollbar-track {
+    background: #0f152e; 
+}
+:root.theme-midnight ::-webkit-scrollbar-thumb {
+    background: #4f6492; 
+}
+:root.theme-midnight ::-webkit-scrollbar-thumb:hover {
+    background: #93c5fd; 
+}
+
+:root.theme-midnight img {
+    filter: brightness(0.85);
+}
